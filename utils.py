@@ -117,7 +117,8 @@ def detect_objects(model, img, iou_thresh, nms_thresh):
     # probability of detection. All predicted bounding boxes with a value less than
     # the given NMS threshold will be removed.
     list_boxes = model(img, nms_thresh)
-    print(list_boxes)
+    print(len(list_boxes))
+    print(list_boxes[0][0])
     # Make a new list with all the bounding boxes returned by the neural network
     boxes = list_boxes[0][0] + list_boxes[1][0] + list_boxes[2][0]
     
